@@ -1,26 +1,51 @@
+/* General */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", Arial, sans-serif;
     margin: 0;
-    background-color: #f9f9f9;
+    background: linear-gradient(to bottom right, #fdf6ff, #e3f2ff);
     color: #333;
 }
 
-header, footer {
-    background-color: #003366;
+/* Hero Banner */
+.hero {
+    position: relative;
+    height: 45vh;
+    background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
     text-align: center;
-    padding: 1rem;
 }
 
-main {
-    padding: 2rem;
+.hero h1 {
+    font-size: 3rem;
+    text-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
 
-section {
+/* Cards */
+.card {
     background: white;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    border-radius: 8px;
+    padding: 1.8rem;
+    margin: 2rem auto;
+    border-radius: 18px;
+    max-width: 800px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    animation: fadeInUp 0.8s ease forwards;
 }
 
 label {
@@ -30,28 +55,91 @@ label {
 
 input, select, textarea {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.6rem;
     margin-top: 0.3rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.2s;
 }
 
-button {
+input:focus, select:focus, textarea:focus {
+    border-color: #7a3cff;
+    box-shadow: 0 0 6px #bfa0ff;
+}
+
+/* Buttons */
+.glow-btn {
     margin-top: 1rem;
-    padding: 0.6rem;
-    background-color: #0066cc;
+    padding: 0.8rem 1.2rem;
+    background: linear-gradient(to right, #7a3cff, #b45eff);
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 12px;
+    transition: 0.3s;
+    font-size: 1rem;
 }
 
-button:hover {
-    background-color: #004999;
+.glow-btn:hover {
+    box-shadow: 0 0 15px #cfa7ff;
+    transform: translateY(-2px);
 }
 
+/* Recommendation Box */
+.result-box {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f7ecff;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+/* Itinerary Box */
+.itinerary-box div {
+    background: #f0f7ff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+}
+
+/* Reviews */
 .review {
+    background: #fff4fa;
+    padding: 1rem;
+    border-radius: 12px;
     margin-bottom: 1rem;
 }
 
-#formMessage {
-    margin-top: 1rem;
-    font-weight: bold;
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #7a3cff;
+    color: white;
+    margin-top: 2rem;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+}
+.slide-up {
+    opacity: 0;
+    animation: slideUp 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
