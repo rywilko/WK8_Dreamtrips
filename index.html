@@ -10,15 +10,18 @@
 
 <body>
 
-<header>
-    <h1>DreamTrips Honeymoon Planner</h1>
-    <p>Plan your perfect romantic getaway</p>
+<header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-in">
+        <h1>DreamTrips Honeymoon Planner</h1>
+        <p>Plan your perfect romantic getaway</p>
+    </div>
 </header>
 
 <main>
 
     <!-- Destination Recommendation -->
-    <section>
+    <section class="card slide-up">
         <h2>Find Your Perfect Honeymoon Destination</h2>
 
         <label for="style">Travel Style:</label>
@@ -36,14 +39,14 @@
             <option value="cool">Cool</option>
         </select>
 
-        <button id="recommendBtn">Get Recommendation</button>
+        <button id="recommendBtn" class="glow-btn">Get Recommendation</button>
 
-        <div id="recommendationResult"></div>
+        <div id="recommendationResult" class="result-box"></div>
     </section>
 
 
     <!-- Itinerary Planner -->
-    <section>
+    <section class="card slide-up">
         <h2>Build Your Honeymoon Itinerary</h2>
 
         <form id="itineraryForm">
@@ -62,18 +65,18 @@
             <label for="notes">Notes (max 200 characters):</label>
             <textarea id="notes" maxlength="200"></textarea>
 
-            <button type="submit">Add Itinerary Item</button>
+            <button type="submit" class="glow-btn">Add Itinerary Item</button>
         </form>
 
         <div id="formMessage"></div>
 
         <h3>Your Itinerary</h3>
-        <div id="itineraryList"></div>
+        <div id="itineraryList" class="itinerary-box"></div>
     </section>
 
 
     <!-- Reviews -->
-    <section>
+    <section class="card slide-up">
         <h2>Customer Reviews</h2>
 
         <div class="review">
